@@ -12,8 +12,41 @@ namespace Vidly.Controllers
     {
         // GET: Movies/
         public ActionResult Index()
-        {   
-           return View();
+        {
+            var movies = GetMovies();
+            return View(movies);
+        }
+
+        private IEnumerable<Movie> GetMovies()
+        {
+            return new List<Movie>
+            {
+                //Vidly is famous for thriller/action/horror movies 
+                new Movie { Name = "The Machinist" , Id = 1},
+                new Movie { Name = "Kill Bill V.01" ,Id = 2},
+                new Movie { Name = "Kill Bill V.02" ,Id = 3 },
+                new Movie { Name = "Shawshank Redemption ", Id = 4},
+                new Movie { Name = "The Machinist" ,Id = 5 },
+                new Movie { Name = "Interstellar" , Id = 6},
+                new Movie { Name = "Dark Knight" , Id = 7},
+                new Movie { Name = "Dark Knight Rises" , Id = 8},
+                new Movie { Name = "Insidious" , Id = 9},
+                new Movie { Name = "The Ring" , Id = 10}
+            };
+        }
+
+
+        public ActionResult Details(int Id=0)
+        {
+            if (Id > 0)
+            {
+                var movie = GetMovies().FirstOrDefault(x=>x.Id==Id);
+                return View(movie);
+            }
+            else
+            {
+                return HttpNotFound();
+            }
         }
 
         public ActionResult Random()
