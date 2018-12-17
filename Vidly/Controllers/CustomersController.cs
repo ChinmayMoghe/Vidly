@@ -9,10 +9,24 @@ namespace Vidly.Controllers
 {
     public class CustomersController : Controller
     {
+        private MyDbContext _context;
+
+        public CustomersController()
+        {
+            _context = new MyDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
         // GET: Customers
+
         public ActionResult Index()
         {
-            var customers = GetCustomers();
+            //Deferred Execution
+            var customers = _context.Customers;
+            //var customers = GetCustomers();
             return View(customers);
         }
 
@@ -29,7 +43,8 @@ namespace Vidly.Controllers
         {
             if (Id > 0)
             {
-                var customer = GetCustomers().First(x => x.Id == Id);
+                var customer = _context.Customers.FirstOrDefault(x => x.Id == Id);
+                //var customer = GetCustomers().First(x => x.Id == Id);
                 return View(customer);
             }
             else
