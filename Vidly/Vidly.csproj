@@ -45,16 +45,28 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -147,12 +159,47 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812111449164_InitialModel.cs" />
+    <Compile Include="Migrations\201812111449164_InitialModel.Designer.cs">
+      <DependentUpon>201812111449164_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812111453590_InitialModel1.cs" />
+    <Compile Include="Migrations\201812111453590_InitialModel1.Designer.cs">
+      <DependentUpon>201812111453590_InitialModel1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812111456247_BitchLasaganiaModel.cs" />
+    <Compile Include="Migrations\201812111456247_BitchLasaganiaModel.Designer.cs">
+      <DependentUpon>201812111456247_BitchLasaganiaModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812160306085_RemovalofBitchLasagania.cs" />
+    <Compile Include="Migrations\201812160306085_RemovalofBitchLasagania.Designer.cs">
+      <DependentUpon>201812160306085_RemovalofBitchLasagania.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812160312276_IsSuscribedToNewsLetterprop.cs" />
+    <Compile Include="Migrations\201812160312276_IsSuscribedToNewsLetterprop.Designer.cs">
+      <DependentUpon>201812160312276_IsSuscribedToNewsLetterprop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812160318575_AddMemberShipTypes.cs" />
+    <Compile Include="Migrations\201812160318575_AddMemberShipTypes.Designer.cs">
+      <DependentUpon>201812160318575_AddMemberShipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812160320475_PopulateMemberShipTypes.cs" />
+    <Compile Include="Migrations\201812160320475_PopulateMemberShipTypes.Designer.cs">
+      <DependentUpon>201812160320475_PopulateMemberShipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812160357238_ApplyDataContraints.cs" />
+    <Compile Include="Migrations\201812160357238_ApplyDataContraints.Designer.cs">
+      <DependentUpon>201812160357238_ApplyDataContraints.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\MemberShipTypes.cs" />
+    <Compile Include="Models\MyDbContext.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -201,10 +248,13 @@
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Movies\Random.cshtml" />
     <Content Include="Views\Shared\_navbar.cshtml" />
+    <Content Include="Views\Customers.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Customer\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -218,6 +268,32 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201812111449164_InitialModel.resx">
+      <DependentUpon>201812111449164_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812111453590_InitialModel1.resx">
+      <DependentUpon>201812111453590_InitialModel1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812111456247_BitchLasaganiaModel.resx">
+      <DependentUpon>201812111456247_BitchLasaganiaModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812160306085_RemovalofBitchLasagania.resx">
+      <DependentUpon>201812160306085_RemovalofBitchLasagania.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812160312276_IsSuscribedToNewsLetterprop.resx">
+      <DependentUpon>201812160312276_IsSuscribedToNewsLetterprop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812160318575_AddMemberShipTypes.resx">
+      <DependentUpon>201812160318575_AddMemberShipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812160320475_PopulateMemberShipTypes.resx">
+      <DependentUpon>201812160320475_PopulateMemberShipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812160357238_ApplyDataContraints.resx">
+      <DependentUpon>201812160357238_ApplyDataContraints.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
