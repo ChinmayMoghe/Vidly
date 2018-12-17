@@ -197,6 +197,14 @@
     <Compile Include="Migrations\201812160357238_ApplyDataContraints.Designer.cs">
       <DependentUpon>201812160357238_ApplyDataContraints.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812171701448_AddNameToMemberShipType.cs" />
+    <Compile Include="Migrations\201812171701448_AddNameToMemberShipType.Designer.cs">
+      <DependentUpon>201812171701448_AddNameToMemberShipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812171703016_PopulateMembershipName.cs" />
+    <Compile Include="Migrations\201812171703016_PopulateMembershipName.Designer.cs">
+      <DependentUpon>201812171703016_PopulateMembershipName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\MemberShipTypes.cs" />
     <Compile Include="Models\MyDbContext.cs" />
@@ -293,6 +301,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812160357238_ApplyDataContraints.resx">
       <DependentUpon>201812160357238_ApplyDataContraints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812171701448_AddNameToMemberShipType.resx">
+      <DependentUpon>201812171701448_AddNameToMemberShipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812171703016_PopulateMembershipName.resx">
+      <DependentUpon>201812171703016_PopulateMembershipName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
