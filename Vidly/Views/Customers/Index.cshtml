@@ -18,15 +18,20 @@ else
             <tr>
                 <th>Customers</th>
                 <th>Membership</th>
+                <th>Date Of Birth</th>
             </tr>
        </thead>
         <tbody>
             @foreach (var customer in Model)
             {
-                <tr>
-                    <td>@Html.ActionLink(customer.Name, "Details", "Customers", new { id = customer.Id }, null)</td>
-                    <td>@customer.MemberShipType.Name</td>
-                </tr>
+            <tr>
+                <td>@Html.ActionLink(customer.Name, "Details", "Customers", new { id = customer.Id }, null)</td>
+                <td>@customer.MemberShipType.Name</td>
+                    @if (customer.DateOfBirth.HasValue)
+                    {
+                    <td>@customer.DateOfBirth.Value.ToShortDateString()</td>
+                    }
+            </tr>
             }
         </tbody>
     </table>

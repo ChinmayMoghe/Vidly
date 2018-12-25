@@ -24,7 +24,8 @@ namespace Vidly.Controllers
 
         public ActionResult Index()
         {
-            //Deferred Execution
+            //Deferred Execution > Just .Include()
+            //Eager Loading > .ToList()
             var customers = _context.Customers.Include("MemberShipType").ToList();
             //var customers = GetCustomers();
             return View(customers);

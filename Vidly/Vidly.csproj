@@ -205,6 +205,14 @@
     <Compile Include="Migrations\201812171703016_PopulateMembershipName.Designer.cs">
       <DependentUpon>201812171703016_PopulateMembershipName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812201542216_AddDOBToCustomer.cs" />
+    <Compile Include="Migrations\201812201542216_AddDOBToCustomer.Designer.cs">
+      <DependentUpon>201812201542216_AddDOBToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812201543470_PopulateDOBForCustomer.cs" />
+    <Compile Include="Migrations\201812201543470_PopulateDOBForCustomer.Designer.cs">
+      <DependentUpon>201812201543470_PopulateDOBForCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\MemberShipTypes.cs" />
     <Compile Include="Models\MyDbContext.cs" />
@@ -307,6 +315,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812171703016_PopulateMembershipName.resx">
       <DependentUpon>201812171703016_PopulateMembershipName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812201542216_AddDOBToCustomer.resx">
+      <DependentUpon>201812201542216_AddDOBToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812201543470_PopulateDOBForCustomer.resx">
+      <DependentUpon>201812201543470_PopulateDOBForCustomer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
