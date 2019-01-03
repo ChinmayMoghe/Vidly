@@ -6,4 +6,14 @@
 
 <h2>Movie Details</h2>
 <h3>@Model.Name</h3>
-
+<ul>
+    <li>Genre : @Model.Genre.Genre</li>
+    <li>ReleaseDate : @Model.ReleaseDate.ToLongDateString()</li>
+    <li>Date Added : @Model.DateAdded.ToLongDateString()</li>
+    <li>Number In Stock : @Model.NumberInStock</li>
+</ul>
+<img src="@Model.ImageURL" alt="@Model.Name">
+<h3>
+    Description
+</h3>
+<p>@Model.Description</p>

@@ -213,7 +213,32 @@
     <Compile Include="Migrations\201812201543470_PopulateDOBForCustomer.Designer.cs">
       <DependentUpon>201812201543470_PopulateDOBForCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812261655127_addGenresTable.cs" />
+    <Compile Include="Migrations\201812261655127_addGenresTable.Designer.cs">
+      <DependentUpon>201812261655127_addGenresTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812261656172_PopulateGenresTable.cs" />
+    <Compile Include="Migrations\201812261656172_PopulateGenresTable.Designer.cs">
+      <DependentUpon>201812261656172_PopulateGenresTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812261715392_addedGenreToMovieTable.cs" />
+    <Compile Include="Migrations\201812261715392_addedGenreToMovieTable.Designer.cs">
+      <DependentUpon>201812261715392_addedGenreToMovieTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812291604287_PopulateMoviesTable.cs" />
+    <Compile Include="Migrations\201812291604287_PopulateMoviesTable.Designer.cs">
+      <DependentUpon>201812291604287_PopulateMoviesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812291749584_AddDateandStockColumnsToMovieTable.cs" />
+    <Compile Include="Migrations\201812291749584_AddDateandStockColumnsToMovieTable.Designer.cs">
+      <DependentUpon>201812291749584_AddDateandStockColumnsToMovieTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901021536341_AddImageURLandDescription.cs" />
+    <Compile Include="Migrations\201901021536341_AddImageURLandDescription.Designer.cs">
+      <DependentUpon>201901021536341_AddImageURLandDescription.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Genres.cs" />
     <Compile Include="Models\MemberShipTypes.cs" />
     <Compile Include="Models\MyDbContext.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -321,6 +346,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812201543470_PopulateDOBForCustomer.resx">
       <DependentUpon>201812201543470_PopulateDOBForCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812261655127_addGenresTable.resx">
+      <DependentUpon>201812261655127_addGenresTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812261656172_PopulateGenresTable.resx">
+      <DependentUpon>201812261656172_PopulateGenresTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812261715392_addedGenreToMovieTable.resx">
+      <DependentUpon>201812261715392_addedGenreToMovieTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812291604287_PopulateMoviesTable.resx">
+      <DependentUpon>201812291604287_PopulateMoviesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812291749584_AddDateandStockColumnsToMovieTable.resx">
+      <DependentUpon>201812291749584_AddDateandStockColumnsToMovieTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901021536341_AddImageURLandDescription.resx">
+      <DependentUpon>201901021536341_AddImageURLandDescription.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

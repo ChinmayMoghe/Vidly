@@ -10,10 +10,21 @@ namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
+        private MyDbContext _context;
+
+        public MoviesController()
+        {
+            _context = new MyDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
         // GET: Movies/
         public ActionResult Index()
         {
-            var movies = GetMovies();
+            var movies =_context.Movies.Include("Genre");
             return View(movies);
         }
 
@@ -40,7 +51,8 @@ namespace Vidly.Controllers
         {
             if (Id > 0)
             {
-                var movie = GetMovies().FirstOrDefault(x=>x.Id==Id);
+                //var movie = GetMovies().FirstOrDefault(x=>x.Id==Id);
+                var movie = _context.Movies.Include("Genre").FirstOrDefault(x => x.Id == Id); 
                 return View(movie);
             }
             else
